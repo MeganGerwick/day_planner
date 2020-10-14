@@ -30,7 +30,8 @@
     </header>
 
     <div class="container">
-      <table width="100%">
+      
+    <!--  <table width="100%">
        <tr class="row">
         <th class="hour" width="100%"> </th>  
         <th class="time-block" id="9am" width="20%">9:00 am</th>
@@ -85,20 +86,87 @@
         <th class="description" width="60%"></th>
         <th class="saveBtn" width="20%"></th>
       </tr>
-    </table>
-      
+    </table>-->
+  <div class="row" id="9amRow">
+    <div class="hour"></div>
+    <p class="time-block" id="9am">9:00 am</p>
+    <input type="text" class="description" id="9amTask"></input>
+    <button class="saveBtn" id="9amBtn">Save</button>
+  </div>
+  <div class="row" id="10amRow">
+    <div class="hour"></div>
+    <p class="time-block" id="10am">10:00 am</p>
+    <input type="text" class="description"></input>
+    <button class="saveBtn" id="10amBtn">Save</button>
+  </div>
+  <div class="row" id="11amRow">
+    <div class="hour"></div>
+    <p class="time-block" id="11am">11:00 am</p>
+    <input type="text" class="description"></input>
+    <button class="saveBtn" id="11amBtn">Save</button>
+  </div>
+  <div class="row" id="12pmRow">
+    <div class="hour"></div>
+    <p class="time-block" id="12pm">12:00 pm</p>
+    <input type="text" class="description"></input>
+    <button class="saveBtn" id="12pmBtn">Save</button>
+  </div>
+  <div class="row" id="1pmRow">
+    <div class="hour"></div>
+    <p class="time-block" id="1pm">1:00 pm</p>
+    <input type="text" class="description"></input>
+    <button class="saveBtn" id="1pmBtn">Save</button>
+  </div>
+  <div class="row" id="2pmRow">
+    <div class="hour"></div>
+    <p class="time-block" id="2pm">2:00 pm</p>
+    <input type="text" class="description"></input>
+    <button class="saveBtn" id="2pmBtn">Save</button>
+  </div>
+  <div class="row" id="3pmRow">
+    <div class="hour"></div>
+    <p class="time-block" id="3pm">3:00 pm</p>
+    <input type="text" class="description"></input>
+    <button class="saveBtn" id="3pmBtn">Save</button>
+  </div>
+  <div class="row" id="4pmRow">
+    <div class="hour"></div>
+    <p class="time-block" id="4pm">4:00 pm</p>
+    <input type="text" class="description"></input>
+    <button class="saveBtn" id="4pmBtn">Save</button>
+  </div>
+    <div class="row" id="5pmRow">
+    <div class="hour"></div>
+    <p class="time-block" id="5pm">5:00 pm</p>
+    <input type="text" class="description"></input>
+    <button class="saveBtn" id="5pmBtn">Save</button>
+  </div>
+
   </div>  
           
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript">
+   
+    //set variable to pull current date and current time 
+ //var dateTime = moment().format("MMMM Do YYYY, h:mm:ss a");
+ //$('#currentDay').text(dateTime);
+
     
-    //Add input box to description
+    //Add Click Event to save button
+$('#9amBtn').click(function(){
+  //Store input from description box locally
+  var task9am = document.getElementById('9amTask').value;
+localStorage.setItem("9amToDo", task9am);
+  //Replace text in description box 
+  $('#9amTask').replaceWith(function() {
     
-    
-    //Add Save button to each row of table
- document.getElementsByClassName("saveBtn").setAttribute("type", "button");
+})
+         
+//change color of background depending on the current time 
+
+ 
     </script>
   </body>
 </html>
