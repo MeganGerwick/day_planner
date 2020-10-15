@@ -156,6 +156,7 @@
  
  var time = moment().format("HH");
  console.log(time);
+
   //Check local storage for saved items
 var toDo9El =$('#9amTask');
 toDo9El.val(localStorage.getItem("9amToDo") )
@@ -187,29 +188,65 @@ toDo4El.val(localStorage.getItem("4pmToDo") )
 var toDo5El =$('#5pmTask');
 toDo5El.val(localStorage.getItem("5pmToDo") )
 
-// //Change timeblock colors according to current time
-// if (time > 9) {
-//   $(toDo9El).addClass("past");
-// }
+//Change timeblock colors according to current time
+ if (time > 9) {
+   $(toDo9El).addClass("past");
+ }
+ if (time < 9) {
+   $(toDo9El).addClass("future");
+ }
+ if (time == 9) {
+   $(toDo9El).addClass("present")
+ }
 
-// <!--   //Add Click Event to save button
-// $('#9amBtn').click(function(){
-//   //Store input from description box locally
-//   var task9am = $('#9amTask').val();
-// localStorage.setItem("9amToDo", task9am);
-//   //Replace text in description box 
-// })
+  //Add Click Event to save button
+$('#9amBtn').click(function(){
+var task9am = $('#9amTask').val();
+localStorage.setItem("9amToDo", task9am);
+})
 
-//  var toDo10El =$('#10amTask');
-// toDo10El.val(localStorage.getItem("10amToDo") )
+$('#10amBtn').click(function(){
+var task10am = $('#10amTask').val();
+localStorage.setItem("10amToDo", task10am);
+})  
 
-//     //Add Click Event to save button
-// $('#10amBtn').click(function(){
-//   //Store input from description box locally
-//   var task10am = $('#10amTask').val();
-// localStorage.setItem("10amToDo", task10am);
-//   //Replace text in description box 
-// })        
+$('#11amBtn').click(function(){
+var task11am = $('#11amTask').val();
+localStorage.setItem("11amToDo", task11am);
+}) 
+
+$('#12pmBtn').click(function(){
+var task12pm = $('#12pmTask').val();
+localStorage.setItem("12pmToDo", task12pm);
+}) 
+
+$('#1pmBtn').click(function(){
+var task1pm = $('#1pmTask').val();
+localStorage.setItem("1pmToDo", task1pm);
+}) 
+
+$('#2pmBtn').click(function(){
+var task2pm = $('#2pmTask').val();
+localStorage.setItem("2pmToDo", task2pm);
+}) 
+
+$('#3pmBtn').click(function(){
+var task3pm = $('#3pmTask').val();
+localStorage.setItem("3pmToDo", task3pm);
+}) 
+
+$('#4pmBtn').click(function(){
+var task4pm = $('#4pmTask').val();
+localStorage.setItem("4pmToDo", task4pm);
+}) 
+
+$('#5pmBtn').click(function(){
+var task5pm = $('#5pmTask').val();
+localStorage.setItem("5pmToDo", task5pm);
+}) 
+
+
+
 //change color of background depending on the current time 
  $('button').on('click', function (){
    console.log($(this).attr('data-hour'));
